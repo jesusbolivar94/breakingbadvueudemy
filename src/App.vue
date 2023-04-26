@@ -19,12 +19,15 @@ export default defineComponent({
 </script>-->
 
 <!--Script setup way-->
-<script setup lang="ts">
+<!--<script setup lang="ts">
 import {ref} from "vue"
 
 const counter = ref(0)
 const increase = () => counter.value += 1
-</script>
+</script>-->
+
+<!--Creating an external ts file and define a component-->
+<script lang="ts" src="@/App.ts"></script>
 
 <template>
     <div class="wrapper">
