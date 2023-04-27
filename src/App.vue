@@ -1,38 +1,18 @@
-<!-- Old way <script lang="ts">
-import {defineComponent, ref} from "vue"
-
-export default defineComponent({
-    setup(props, {emit}) {
-
-        const counter = ref(0)
-
-        const increase = () => {
-            counter.value = counter.value + 1
-        }
-
-        return {
-            counter,
-            increase
-        }
-    }
-})
-</script>-->
-
-<!--Script setup way-->
-<!--<script setup lang="ts">
-import {ref} from "vue"
-
-const counter = ref(0)
-const increase = () => counter.value += 1
-</script>-->
-
-<!--Creating an external ts file and define a component-->
-<script lang="ts" src="@/App.ts"></script>
+<script setup lang="ts">
+    import {RouterView} from "vue-router"
+    import NavBar from "@/shared/components/NavBar.vue"
+    import {routerLinks} from "@/router/link-routes"
+</script>
 
 <template>
     <div class="wrapper">
-        <h1>Counter: {{ counter }}</h1>
-        <button @click="increase">+</button>
+        <header>
+            <NavBar title="BreakingBad" :links="routerLinks"/>
+        </header>
+
+        <main>
+            <RouterView />
+        </main>
     </div>
 </template>
 
